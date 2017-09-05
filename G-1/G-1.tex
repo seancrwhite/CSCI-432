@@ -16,7 +16,25 @@ Binary Search Algorithm:
 
 \begin{verbatim}
 
-//Enter Code Here
+The Algorithm we selected is called Binary Search.
+
+BinarySearch(Array r,int val)
+
+	if r.length == 1
+		if r[0] == val
+			return true
+		else
+			return false
+		
+	int half = r.length/2
+	
+	if r[half] == val
+		return true
+	else if r[half] < val
+		return BinarySearch(r[0:half])
+	else return BinarySearch(r[half:r.length])
+	
+			
 
 \end{verbatim}
 
