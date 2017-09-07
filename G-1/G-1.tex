@@ -1,41 +1,57 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
-\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
 
-\pagestyle{fancy}
-\lhead{Sean White | Rostik Mertz | Kierstyn Brandt}
-\rhead{G-01}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\usepackage{amsmath,amssymb,amsthm}
+
+\def\R{{\mathbb R}}
+
+\title{Homework 1}
+\author{Sean White, Kierstyn Brandt, Rostik Mertz}
 
 \begin{document}
 
+\maketitle
+
 \noindent
-\textbf{Question A. (50 points).}\\
-Write one algorithm from EPI in pseudocode. Use the Algorithm / Algorithmic environment.
+During this assignment, I recieved help from the following people and sources:
+\begin{itemize}
+ \item None.
+ \item OR: Name / website / book; extent of collaboration / use 
+ \item Next Name / website / book; extent of collaboration / use 
+\end{itemize}
 
-Binary Search Algorithm:
 
-\begin{verbatim}
+\section*{Question 1: Write one algorithm from EPI in pseudocode.}
+  \begin{algorithm}\caption{\textsc{BINARY-SEARCH(X,C)}}\label{alg:bs}
+ \begin{algorithmic}[1]
+   \State {\bf Input:} $S$, $X,C$
+   \State {\bf Output:} $B$, TRUE if value exists in array, otherwise FALSE
+   \State ~
 
-The Algorithm we selected is called Binary Search.
+   \If{$|X| == 1 && X[0] != C$}
+   \State return FALSE
+   \EndIf
+   
+   \State $i \gets |X|/2$
 
-BinarySearch(Array r,int val)
+   \If{$X[i] == C$}
+   \State return TRUE
+   \EndIf
 
-	if r.length == 1
-		if r[0] == val
-			return true
-		else
-			return false
-		
-	int half = r.length/2
-	
-	if r[half] == val
-		return true
-	else if r[half] < val
-		return BinarySearch(r[0:half])
-	else return BinarySearch(r[half:r.length])
-	
-			
+   \If{$X[i] > C$}
+   \State return BINARY-SEARCH(X[i:|X|],C)
+   \EndIf
 
-\end{verbatim}
+   \If{$X[i] > C$}
+   \State return BINARY-SEARCH(X[0:i],C)
+   \EndIf
+ \end{algorithmic}
+\end{algorithm}
+
 
 \end{document}
