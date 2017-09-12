@@ -3,6 +3,9 @@
 \usepackage{amssymb}
 \usepackage{listings}
 \usepackage{framed}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
 
 \author{Sean White, Kierstyn Brandt, Rostik Mertz, Norman Tang}
 \title{CSCI 432 - Assignment G2}
@@ -14,30 +17,57 @@
 
 (a) How would you efficiently find a local minimum, if one exists?\\
 
+\begin{algorithm}[H]\caption{\textsc{FIND-LOCAL-MINIMA(A)}}
+	\begin{algorithmic}[1]
+		\State{\textbf{In:} }$A$ an unsorted array of n integers, with $A[0] \geq A[1]$ and $A[n - 2] \leq A[n - 1]$
+		\State{\textbf{Out:}} $m$ first local minima
+		\State ~
+		\State $l \gets \|A\|$
+		\If{$A[0] == A[1]$}
+			\State $m \gets A[0]$
+			\State return m
+		\EndIf
+		\If{$A[l - 1] == A[l - 2]$}
+			\State $m \gets A[l - 1]$
+			\State return m
+		\EndIf
+		\For{$i \gets  1...(n-2)$}
+			\If{$A[i] \leq A[i-1] \&\& A[i] \leq A[i+1]$}
+				\State $m \gets A[i]$
+				\State return m
+			\EndIf
+		\EndFor
+	\end{algorithmic}
+\end{algorithm}
+
 (b) For any loops in your algorithm, state what the loop invariant is.\\
 
-\textbf{Question B.} The rand() function in the standard C library returns a uniformly random number in [0,RANDMAX-1]. Does rand() mod n generate a number uniformly distributed in [0, n−1]?\\
+The loop invariant is the fact that there exists a local minima $m \in A$\\
+
+\textbf{Question B.} The rand() function in the standard C library returns a uniformly random number in $[0,RANDMAX-1]$. Does rand() mod n generate a number uniformly distributed in $[0, n-1]$?\\
 
 \textbf{Question C.} In this class, we assume the real-RAM model of computation for our analysis. Explain why we must define what model of computation we are using in an algorithms class, or, more generally, when talking about the complexity of an algorithm.\\
 
+We need a clearly defined model of computation because we need to be able to contextualize the algorithms we are analyzing. The complexity of an algorithm can change depending on the model you choose, and loops can have different implications on it overall.\\
+
 \textbf{Question D.} Which of the following correctly capture the runtime complexity of Mergesort. (Remember, you are expected to justify your answers to questions like this).\\
-
-(a) $O(n)$\\
-
-(b) $O(n log n)$\\
-
-(c) $O(n^2)$\\
-
-(d) $\Omega(n)$\\
-
-(e) $\Omega(n log n)$\\
-
-(f) $\Omega(n^2)$\\
-
-(g) $\Theta(n)$\\
 
 (h) $\Theta(n log n)$\\
 
-(i) $\Theta(n 2)$\\
+Merge sort works in the following steps:\\
+
+1) Select the middle index of the array: $\Theta(1)$
+
+2) Split the array at the middle index: $\Theta(1)$
+
+3) Sort the left array recursively: $T(\frac{n}{2})$
+
+4) Sort the right array recursively: $T(\frac{n}{2})$\\
+
+So we get $T(n) = \Theta(1) + \Theta(1) + T(\frac{n}{2}) + T(\frac{n}{2})$ 
+
+which simplifies to $2T(\frac{n}{2}) + 2\Theta(1)$
+
+By Master's Theorem this means that $T(n) = \Theta(n log n)$
 
 \end{document}
