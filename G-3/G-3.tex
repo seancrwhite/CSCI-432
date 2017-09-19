@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\author{Sean White, Kierstyn Brandt, Rostik Mertz, Norman Tang}
+\title{CSCI 432 - Assignment G3}
+
+\begin{document}
+\maketitle
+
+\noindent
+\textbf{Question A:} For this question, consider the handout and/or CLRS 7.4, which analyze Randomized Quicksort. Consider now the psuedocode we developed in class (where we randomized the order of the array, then ran ‘vanilla’ Quicksort). In your own words, analyze the runtime of our version of Randomzied Quicksort.\\
+
+\noindent
+\textbf{Question B:} Algorithms where we use randomization to find a deterministic answer are known as Las Vegas algorithms. Monte Carlo algorithms also use randomization, but might not always give the right answer; however, they either have a high probability of being correct or close to correct.\\
+
+\noindent
+(a) Give a Monte Carol algorithm to estimate $\pi$\\
+
+\noindent
+(b) Let n be the number of random numbers used by your algorithm. Explain why as $n \rightarrow \infty$, the expectation of the output for your algorithm is $\pi$.\\
+
+\noindent
+(c) Implement this algorithm and plot a line graph of the values returned for at least 10 values of n.
+
+\noindent
+Note: We can use the function randReal(a, b) that returns a random real number between a and b inclusive.\\
+
+
+\end{document}
