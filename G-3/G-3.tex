@@ -16,6 +16,8 @@
 \noindent
 \textbf{Question A:} For this question, consider the handout and/or CLRS 7.4, which analyze Randomized Quicksort. Consider now the psuedocode we developed in class (where we randomized the order of the array, then ran ‘vanilla’ Quicksort). In your own words, analyze the runtime of our version of Randomzied Quicksort.\\
 
+The difference between 'vanilla' quicksort and our randomized quicksort is we shuffle the array at each iteration and always pick the first element as our pivot. On average we will be splitting the array in two at each iteration, then randomizing in linear time. This gives us $T(n) = 2T(\frac{n}{2}) + \Theta(n)$. Master's theorem is described as $aT(\frac{n}{b}) +f(n)$, in this case both a and b are 2, so $T(n) = \Theta(n^{log_2 (2)log(n)} = \Theta(n log(n)$.\\ 
+
 \noindent
 \textbf{Question B:} Algorithms where we use randomization to find a deterministic answer are known as Las Vegas algorithms. Monte Carlo algorithms also use randomization, but might not always give the right answer; however, they either have a high probability of being correct or close to correct.\\
 
