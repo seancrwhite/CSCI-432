@@ -15,12 +15,18 @@
 \maketitle
 
 \noindent
-\textbf{Algorithm A - PageRank:}\\
+\textbf{Algorithm A - PageRank:}\smallskip
+
+Written by Larry Page, Terry Winograd, Sergey Brin, and Rajeev Motwani, PageRank is the algorithm that powers Google's search algorithm. In the 1990's internet search worked primarily by tokenizing your search and finding websites that contained those words. Pages where your search terms showed up more fequently were ranked higher than pages where they showed up less frequently. The problem with this is, if someone searches for 'Montana State University', there was no garauntee that montana.edu would be the top result. A Bobcats football fan site could've potentially come before it if it mentioned those terms more frequently.
+
+PageRank solved this problem by considering page linking over word frequency. When a page linked to another page, the algorithm considered that a vote of confidence. It figured that if the page is being linked to, there must be something there the original site thought was worth sharing. So, in the earlier exampe, let's say the our Bobcat football fansite linked to the official Montana State University site, but MSU's site didn't contain any links back. Now when we search for 'Montana State University' the algorithm sees that the fansite (as well as many other sites) link to montana.edu, so it considers that site to be the most important result and ranks it first.
+\bigskip
 
 \noindent
-\textbf{Algorithm B - :}\\
+\textbf{Algorithm B - :}\smallskip
 
+\bigskip
 \noindent
-\textbf{Algorithm C - :}\\
+\textbf{Algorithm C - :}\smallskip
 
 \end{document}
