@@ -28,9 +28,11 @@ PageRank solved this problem by considering page linking over word frequency. Wh
 \bigskip
 \noindent
 \textbf{Algorithm C - :}\smallskip
-
+Written by Heiko Schwarz, Detlev Marpe, and Thomas Wiegand. H.264, specifically the Annex G version, is a video compression algorithm that was developed to utilize Scalable Video Coding (SVC) to solve the issues of streaming video on devices whose capabilities can wildly differ. Scalability of video in this case meant removal of parts of the bit stream in order to adapt to the devices ability to stream as well as the needs or preferences of the end-user. It would also scale to varying network environments. This allows certain levels of 'failure' to exist without jeopardizing the whole video stream, which is unlike previous algorithms which had behaviors fall into two broad categories: it works, or it doesn't work. \newline
+Previous attempts at SVC resulted in significant complexity increases of the code, and the resulting loss of efficiency of the decoder. In H.264, the SVC creates substreams that are of lower quality of the base stream, but still have a good quality to size ratio. It considers three kinds of scalability, temporal, spatial, and quality when making these substreams. It encodes this once, for the required resolution and bit rate, discarding data until it reaches that requirement. By this method it can stream to lower capability devices as well as high performance machines efficiently.
 \bigskip
 
-PageRank Algorithm, 1998; Brin, Page. (n.d.).
+PageRank Algorithm, 1998; Brin, Page. (n.d.). \\
+IEEE Transactions on Circuits and Systems for Video Technology, 2007; Wiegand, Thomas. (n.d).
 
 \end{document}
