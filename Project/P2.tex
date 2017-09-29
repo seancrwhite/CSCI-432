@@ -24,20 +24,41 @@ PageRank solved this problem by considering page linking over word frequency. Wh
 
 \noindent
 \textbf{Algorithm B - Optimal Output-Sensitive Convex Hull Algorithm:}\smallskip
-A convex hull is a problem of finding the smallest enclosing polygon for a set of points on a Euclidean plane that encompasses all points in the set within the polygon as well as using some of the points to define the outline. This works for Euclidean planes or Euclidean spaces. This specific algorithm created by Chan is an improvement upon previous convex hull algorithms due to its nature of being output-sensitive. This means that the runtime depends on the output of the algorithm as well as the input. In this case the output of the algorithm is the number of vertexes in the polygon. Chan's algorithm solves the runtime problem of the runtime being completely dependent on the input
+
+Written by Timothy A. Chan the Optimal Output-Sensitive Convex Hull Algorithm in two and three dimension is meant to help optimize the process of finding a convex hull. A convex hull is finding the smallest enclosing polygon for a set of points on a Euclidean plane that encompasses all points in the set within the polygon as well as using some of the points to define the outline. This works for Euclidean planes or Euclidean spaces. 
+
+This specific algorithm created by Chan is an improvement upon previous convex hull algorithms due to its nature of being output-sensitive. This means that the runtime depends on the output of the algorithm as well as the input. In this case the output of the algorithm is the number of vertexes in the polygon. Chan's algorithm helps to solve the problem of runtime being completely dependent on the input and saying that the size of the output or the number of vertexes in the convex has an impact on the how fast the convex can be calculated. A lot of other convex hull algorithm rely solely on the number of points in the set to determine the runtime. Chan managed to do this by elaborating and improving previous convex hull algorithms. For two dimensional Jarvis's March and Graham's Scan and for three dimensional the gift-wrapping method. 
+
+
+
 \bigskip
 \noindent
+
 \textbf{Algorithm C - :}\smallskip
+
 Written by Heiko Schwarz, Detlev Marpe, and Thomas Wiegand. H.264, specifically the Annex G version, is a video compression algorithm that was developed to utilize Scalable Video Coding (SVC) to solve the issues of streaming video on devices whose capabilities can wildly differ. Scalability of video in this case meant removal of parts of the bit stream in order to adapt to the devices ability to stream as well as the needs or preferences of the end-user. It would also scale to varying network environments. This allows certain levels of 'failure' to exist without jeopardizing the whole video stream, which is unlike previous algorithms which had behaviors fall into two broad categories: it works, or it doesn't work. \newline
 Previous attempts at SVC resulted in significant complexity increases of the code, and the resulting loss of efficiency of the decoder. In H.264, the SVC creates substreams that are of lower quality of the base stream, but still have a good quality to size ratio. It considers three kinds of scalability, temporal, spatial, and quality when making these substreams. It encodes this once, for the required resolution and bit rate, discarding data until it reaches that requirement. By this method it can stream to lower capability devices as well as high performance machines efficiently.
 \bigskip
 
+\textbf{References:}\smallskip
+
 PageRank Algorithm, 1998; Brin, Page. (n.d.).
+
 Sharir, M.; Overmars, M. H. (1992). "A simple output-sensitive algorithm for hidden surface removal". ACM Transactions on Graphics.
- Khaireel A. Mohamed and Christine Kupich. An O(n log n) Output-Sensitive Algorithm to Detect and Resolve Conflicts for 1D Range Filters in Router Tables. Institut für Informatik. August 5, 2006
-  Frank Nielsen. Grouping and Querying: A Paradigm to Get Output-Sensitive Algorithms. Revised Papers from the Japanese Conference on Discrete and Computational Geometry, pp.250–257. 1998
+
+Khaireel A. Mohamed and Christine Kupich. An O(n log n) Output-Sensitive Algorithm to Detect and Resolve Conflicts for 1D Range Filters in Router Tables. Institut für Informatik. August 5, 2006
+ 
+Frank Nielsen. Grouping and Querying: A Paradigm to Get Output-Sensitive Algorithms. Revised Papers from the Japanese Conference on Discrete and Computational Geometry, pp.250–257. 1998
   
-PageRank Algorithm, 1998; Brin, Page. (n.d.). \\
-IEEE Transactions on Circuits and Systems for Video Technology, 2007; Wiegand, Thomas. (n.d).
+Preparata, Shamos, Computational Geometry, Chapter "Convex Hulls: Basic Algorithms
+
+Luc Devroye and Godfried Toussaint, "A note on linear expected time algorithms for finding convex hulls," Computing, Vol. 26, 1981, pp. 361-366
+
+Barber, C. Bradford; Dobkin, David P.; Huhdanpaa, Hannu (1 December 1996). "The quickhull algorithm for convex hulls". ACM Transactions on Mathematical Software.
+
+Avis, David; Bremner, David; Seidel, Raimund (1997), "How good are convex hull algorithms?", Computational Geometry: Theory and Applications
+
+Chan. Optimal output-sensitive convex hull algorithms in two and three dimensions. Discrete and Computational Geometry, 1996
+  
 
 \end{document}
