@@ -17,14 +17,14 @@
 \noindent
 \textbf{Algorithm A - PageRank:}\smallskip
 
-Written by Larry Page, Terry Winograd, Sergey Brin, and Rajeev Motwani, PageRank is the algorithm that powers Google's search algorithm. In the 1990's internet search worked primarily by tokenizing your search and finding websites that contained those words. Pages where your search terms showed up more fequently were ranked higher than pages where they showed up less frequently. The problem with this is, if someone searches for 'Montana State University', there was no garauntee that montana.edu would be the top result. A Bobcats football fan site could've potentially come before it if it mentioned those terms more frequently.
+Written by Larry Page, Terry Winograd, Sergey Brin, and Rajeev Motwani, PageRank is the algorithm that powers Google's search algorithm. In the 1990's internet search worked primarily by tokenizing your search and finding websites that contained those words. Pages where your search terms showed up more frequently were ranked higher than pages where they showed up less frequently. The problem with this is, if someone searches for 'Montana State University', there was no guarantee that montana.edu would be the top result. A Bobcats football fan site could have potentially come before it if it mentioned those terms more frequently.
 
-PageRank solved this problem by considering page linking over word frequency. When a page linked to another page, the algorithm considered that a vote of confidence. It figured that if the page is being linked to, there must be something there the original site thought was worth sharing. So, in the earlier exampe, let's say the our Bobcat football fansite linked to the official Montana State University site, but MSU's site didn't contain any links back. Now when we search for 'Montana State University' the algorithm sees that the fansite (as well as many other sites) link to montana.edu, so it considers that site to be the most important result and ranks it first.
+PageRank solved this problem by considering page linking over word frequency. When a page linked to another page, the algorithm considered that a vote of confidence. It figured that if the page is being linked to, there must be something there the original site thought was worth sharing. So, in the earlier example, let's say the our Bobcat football fansite linked to the official Montana State University site, but MSU's site didn't contain any links back. Now when we search for 'Montana State University' the algorithm sees that the fansite (as well as many other sites) link to montana.edu, so it considers that site to be the most important result and ranks it first.
 \bigskip
 
 \noindent
-\textbf{Algorithm B - :}\smallskip
-
+\textbf{Algorithm B - Optimal Output-Sensitive Convex Hull Algorithm:}\smallskip
+A convex hull is a problem of finding the smallest enclosing polygon for a set of points on a Euclidean plane that encompasses all points in the set within the polygon as well as using some of the points to define the outline. This works for Euclidean planes or Euclidean spaces. This specific algorithm created by Chan is an improvement upon previous convex hull algorithms due to its nature of being output-sensitive. This means that the runtime depends on the output of the algorithm as well as the input. In this case the output of the algorithm is the number of vertexes in the polygon. Chan's algorithm solves the runtime problem of the runtime being completely dependent on the input
 \bigskip
 \noindent
 \textbf{Algorithm C - :}\smallskip
@@ -32,5 +32,8 @@ PageRank solved this problem by considering page linking over word frequency. Wh
 \bigskip
 
 PageRank Algorithm, 1998; Brin, Page. (n.d.).
-
+Sharir, M.; Overmars, M. H. (1992). "A simple output-sensitive algorithm for hidden surface removal". ACM Transactions on Graphics.
+ Khaireel A. Mohamed and Christine Kupich. An O(n log n) Output-Sensitive Algorithm to Detect and Resolve Conflicts for 1D Range Filters in Router Tables. Institut für Informatik. August 5, 2006
+  Frank Nielsen. Grouping and Querying: A Paradigm to Get Output-Sensitive Algorithms. Revised Papers from the Japanese Conference on Discrete and Computational Geometry, pp.250–257. 1998
+  
 \end{document}
