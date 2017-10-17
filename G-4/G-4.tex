@@ -39,6 +39,10 @@ c) Use the master method to solve $T(n) = 2T(n/4) + 1$ \smallskip
 
 d) Use the master method to solve $T(n) = 2T(n/4) + \sqrt{n}$ \smallskip
 
+$T(n) = 2T(\frac{n}{4})+\sqrt[]{n}$, can otherwise be written as: $T(n) = 2T(\frac{n}{4})+n^{1/2}$. \\
+We set our variables as: $a=2, b=4, f(n)=n^{1/2}$ and $\frac{1}{2}$, s.t. $a\geq1$\&$b>1$, and $f(n)$ is an asymptotically positive function on n. $\log_4 2 = \frac{1}{2} = c$, so this is a case 2 of the theorem. We then use the identity function: $f(n) = \theta(n^{log_ba}log^{k+1} n)$.
+We plug in the values and get: $\sqrt{n}log^1n$. Hence, $T(n)= \theta\sqrt{n}log^1n$ \\
+
 e) Use the master method to solve $T(n) = 2T(n/4) + n$ \smallskip
 
 \noindent
