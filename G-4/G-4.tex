@@ -17,7 +17,21 @@
 \noindent
 \textbf{Question A:} Solve the following recurrences: \smallskip
 
-a) Show that $T(n) = T(n - 1) + n$ is $O(n^2)$ using the substitution method. \smallskip
+a) Show that $T(n) = T(n - 1) + n$ is $O(n^2)$ using the substitution method.\smallskip
+
+To say that $T(n) = T(n - 1) + n$ is $O(n^2)$ is to say that $T(n)$ has an asymptotic upper bound of $n^2$. To show this is true we need to make a guess at a closed upper bound, so let that be $cn^2 - b$ where $c$ and $b$ are arbitrary constants. Now our relation is $T(n) \leq cn^2 -b$ so we see
+
+\begin{align*}
+T(n) &= T(n - 1) + n\\
+&\leq c(n-1)^2 - b + (cn^2 - b)\\
+&= c(n^2 - 2n + 1) + cn^2 -2b\\
+&= 2cn^2 - 2cn - 2b + c\\
+&= cn^2 - cn - 2b + c\\
+&\leq cn^2 - b
+\end{align*}
+
+This is true $\forall c \geq b \geq 0$ so we set $c = 1$ and $b = 0$ which is allowed by the definition of big O and get that $T(n) \leq O(n^2)$.
+\bigskip
 
 b) Use a recursion tree to determine a good asymptotic upper bound for $T(n) = T(n/2) + n^2$. \smallskip
 
