@@ -34,16 +34,23 @@ This is true $\forall c \geq b \geq 0$ so we set $c = 1$ and $b = 0$ which is al
 \bigskip
 
 b) Use a recursion tree to determine a good asymptotic upper bound for $T(n) = T(n/2) + n^2$. \smallskip
+
 The height of the tree is log(n) and at each step (of which there are log(n) of) we do $n^2$ steps, resulting in an upper bound of $O(n^2log(n))$ \bigskip
+
 c) Use the master method to solve $T(n) = 2T(n/4) + 1$ \smallskip
- $n^{log_b a} = n^{ \log_4 2} = n^{1/2}$
- f(n) = $\Omega (n^{ \log_4 3 + \Epsilon }) where \Epsilon = 1/2$
+
+ $n^{log_b a} = n^{log_4 2} = n^{1/2}$
+ f(n) = $\Omega (n^{log_4 3 + \varepsilon})$ where $\varepsilon = 1/2$
  f(n) = $\Omega (n^{1/2 + 1/2})$ 
  2f(n/4) $\leq$ cf(n) if c = 1/2 
  Then T(n) = $\Theta$(1)
+ \bigskip
+ 
 d) Use the master method to solve $T(n) = 2T(n/4) + \sqrt{n}$ \smallskip
 
 e) Use the master method to solve $T(n) = 2T(n/4) + n$ \smallskip
+
+As seen before, the master method is a useful tool when solving recurrences in the form $T(n) = aT(\frac{n}{b}) + f(n)$ where $a$ and $b$ are constants such that $a \geq 1$ and $b > 1$, and $f(n)$ is an asymptotically positive function on n. Given the recurrence $T(n) = 2T(n/4) + n$ we see that $a = 2$, $b = 4$, and $f(n)$ is the identity function. Since the identity function $f(n) = n$ is $\Omega (n)$ and $\Omega (n) > \Omega (n^{log_4 2})$ we are in the case where $f(n)$ is $\Omega (n^{log_b a + \varepsilon})$, so we are in the case where $f(n)$ grows faster than the leaves of the recursion tree. Therefore, by the master theorem, $T(n)$ is $\Theta (f(n))$ so $T(n) = \Theta (n)$. \bigskip
 
 \noindent
 \textbf{Question B:} Consider the randomized algorithm to compute the smallest enclosing ball. Consider the example set in the figure included on the assignment sheet. Suppose that the 'random' choice of vertex always chooses such that the vertex has the smallest index. What are the return values of each recursive call? \smallskip
