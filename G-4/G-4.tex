@@ -39,11 +39,8 @@ The height of the tree is log(n) and at each step (of which there are log(n) of)
 
 c) Use the master method to solve $T(n) = 2T(n/4) + 1$ \smallskip
 
- $n^{log_b a} = n^{log_4 2} = n^{1/2}$
- f(n) = $\Omega (n^{log_4 3 + \varepsilon})$ where $\varepsilon = 1/2$
- f(n) = $\Omega (n^{1/2 + 1/2})$ 
- 2f(n/4) $\leq$ cf(n) if c = 1/2 
- Then T(n) = $\Theta$(1)
+To start the master method we set the variables $a=2, b=4 and f(n) = 1$ where $a \geq 1$, $b > 1$ and $f(n)$ is asymptotically positive. Next we calculate $n^{log_b a} = n^{log_4 2} = n^{1/2}$. This then puts us into case 1 of master's theorem. We can then use the identity function $f(n) = O(n^{log_b a - \varepsilon}$ for some $\varepsilon > 0$ We then plug in the values
+ $f(n) = O (n^{log_4 3 - \varepsilon })$ where $\varepsilon = 1/2$. This gives us a value of 1 which is equal to $f(n)$. Therefore $T(n) = \Omega(n^{log_b a})$ which equals $T(n)=\Omega(n^{log_4 2}) = \Omega(n^{1/2})$
  \bigskip
  
 d) Use the master method to solve $T(n) = 2T(n/4) + \sqrt{n}$ \smallskip
