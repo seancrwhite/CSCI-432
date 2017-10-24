@@ -17,8 +17,14 @@
 \noindent
 \textbf{Question A:} For the algorithm in 16.12 (Find the Longest Nondecreasing Subsequence), what is the loop invariant? Note: be sure to fully justify. \smallskip
 
+A loop invariant is a condition in a loop that is true both before and after an iteration of the loop. It may break anywhere during the loop, but as long as it is true by the end of that iteration these requirements are still met. For the Longest Nondecreasing Subsequence algorithm shown in 16.12 of \textit{Elements of Programming Interviews} let our loop invariant $L$ be that the vector $max\_length$ is populated with the maximum nondecreasing subsequences of $A$ ending at index $i - 1$. 
 
-\bigskip
+At the start of the loop $i$ is equal to 1 and $max\_length$ is initialized with length $= \|A\|$ and each element set to 1. The maximum possible length of any sequence only involving the $0^{th}$ element is 1 as nothing comes before it, therefore $L$ holds true. Now assume $L$ always holds true at the beginning of iteration $i$. This means that $max\_length$ holds the length of the nondecreasing subsequences of $A$ ending at index $i - 1$. The algorithm now runs through the second for loop calulating the maximum nondecreasing subsequence up to index $i$ and stores it in $max\_length$. So at the start of iteration $k = i + 1$, $max\_length$ holds maximum nondecreasing subsequences of $A$ ending at index $k - 1 = i$, so $L$ holds true at the $i + 1$ iteration as well.
+
+At the termination of the loop we will have iterated through all the elements of $A$ and the calculated max nondecreasing subsequences have been stored in $max\_length$. This means that $max\_length$ holds values for sequences in $A$ up to $i$ which implies it has up to $i-1$ as well. Therefore, our $L$ holds at the beginning, end, and termination of the loop and counts as a valid loop invariant.
+
+
+\pagebreak
 \noindent
 \textbf{Question B:} Add one source and one sink vertex ($s$ and $t$, respectively) to Figure 1. Connect $s$ to three vertices, and connect two different vertices to $t$. Add direction and weights to all edges so that the maximum flow / minimum cut of the flow network has value five (5). Annotate the edges clearly so that the max flow is shown, and draw a ‘blob’ (or, a topological disk) that shows what vertices are in S for the minimum cut. \smallskip
 
