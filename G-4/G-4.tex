@@ -39,11 +39,8 @@ The height of the tree is log(n) and at each step (of which there are log(n) of)
 
 c) Use the master method to solve $T(n) = 2T(n/4) + 1$ \smallskip
 
- $n^{log_b a} = n^{log_4 2} = n^{1/2}$
- f(n) = $\Omega (n^{log_4 3 + \varepsilon})$ where $\varepsilon = 1/2$
- f(n) = $\Omega (n^{1/2 + 1/2})$ 
- 2f(n/4) $\leq$ cf(n) if c = 1/2 
- Then T(n) = $\Theta$(1)
+To start the master method we set the variables $a=2, b=4 and f(n) = 1$ where $a \geq 1$, $b > 1$ and $f(n)$ is asymptotically positive. Next we calculate $n^{log_b a} = n^{log_4 2} = n^{1/2}$. This then puts us into case 1 of master's theorem. We can then use the identity function $f(n) = O(n^{log_b a - \varepsilon}$ for some $\varepsilon > 0$ We then plug in the values
+ $f(n) = O (n^{log_4 3 - \varepsilon })$ where $\varepsilon = 1/2$. This gives us a value of 1 which is equal to $f(n)$. Therefore $T(n) = \Omega(n^{log_b a})$ which equals $T(n)=\Omega(n^{log_4 2}) = \Omega(n^{1/2})$
  \bigskip
  
 d) Use the master method to solve $T(n) = 2T(n/4) + \sqrt{n}$ \smallskip
@@ -59,5 +56,23 @@ As seen before, the master method is a useful tool when solving recurrences in t
 
 \noindent
 \textbf{Question B:} Consider the randomized algorithm to compute the smallest enclosing ball. Consider the example set in the figure included on the assignment sheet. Suppose that the 'random' choice of vertex always chooses such that the vertex has the smallest index. What are the return values of each recursive call? \smallskip
+
+call 1: return B = (v1, v7)
+call 2: return B = (v5, v7, v8)
+call 3: return B = (v5, v7, v8)
+call 4: return B = (v5, v7, v8)
+call 5: return B = (v5, v7, v8)
+call 6: return B = (v5, v7, v8)
+call 7: return B = (v7, v8)
+call 8: return B = (v7, v8)
+call 9: return B = (v5, v7, v8)
+call 10: return B = ()
+call 11: return B = (v8)
+call 12: return B = (v7, v8)
+call 13: return B = (v7, v8)
+call 14: return B = (v7, v8)
+call 15: return B = (v7, v8)
+call 16: return B = (v5, v7, v8)
+call 17: return B = (v5, v7, v8)
 
 \end{document}
