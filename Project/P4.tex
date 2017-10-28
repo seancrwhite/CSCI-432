@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\author{Sean White, Kierstyn Brandt, Rostik Mertz, Norman Tang}
+\title{CSCI 432 - Project Deliverable 4}
+
+\begin{document}
+\maketitle
+
+\section*{Algorithm Description}
+Written by Timothy A. Chan the Optimal Output-Sensitive Convex Hull Algorithm in two and three dimension is meant to help optimize the process of finding a convex hull. A convex hull is finding the smallest enclosing polygon for a set of points on a Euclidean plane that encompasses all points in the set within the polygon as well as using some of the points to define the outline. This works for Euclidean planes or Euclidean spaces. 
+
+This specific algorithm created by Chan is an improvement upon previous convex hull algorithms due to its nature of being output-sensitive. This means that the runtime depends on the output of the algorithm as well as the input. In this case the output of the algorithm is the number of vertexes in the polygon. Chan's algorithm helps to solve the problem of runtime being completely dependent on the input and saying that the size of the output or the number of vertexes in the convex has an impact on the how fast the convex can be calculated. A lot of other convex hull algorithm rely solely on the number of points in the set to determine the runtime. Chan managed to do this by elaborating and improving previous convex hull algorithms. For two dimensional Jarvis's March and Graham's Scan and for three dimensional the gift-wrapping method. 
+\bigskip
+\section*{Pseudo Code}
+This pseudo code was taken from (insert cite here for Chan). 
+\begin{algorithm}[H]\caption{\textsc{Hull2D}}\label{alg:2D}
+\begin{algorithmic}[1]
+\State {\bf Input:} $P$, $m$, $H$, where $P\subset E^2$, 3 $\leq m \leq n$, and $H\geq$ 1
+\State {\bf Output:} either $incomplete$ or list of points
+\State ~
+\State partition $P$ into subsets $P_1,\dots , P_{\lceil n/m \rceil}$ each of size at most $m$
+\For{$i, \dots \lceil n/m \rceil$}
+	\State compute conv($P_i$) by Graham's scan and store its vertices in an array in ccw order
+\EndFor
+\State $p_0 \gets (0,-\infty)$
+\State $p_1 \gets$ the rightmost point of $P$
+\For {$k=1,\dots,H$}
+\For {$i=1,\dots,\lceil n/m \rceil$}
+\State compute the point $q_i \in P_i$ that maximizes $\angle p_{k-1}p_kq_i$ ($q_i \neq p_k$) by performing a binary search on the vertices of conv($P_i$)
+\EndFor
+\State $p_{k+1} \gets$ the point $q$ from $\{q_1, \dots, q_{\lceil n/m \rceil}\}$ that maximizes $\angle p_{k-1}p_kq$
+\If{$p_{k+1} = p_1$}\\
+~~~~~~\Return the list $\langle p_1, \dots ,p_k \rangle$
+\EndIf
+\EndFor\\
+\Return $incomplete$
+ \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}\caption{\textsc{Hull2D}}\label{alg:hull2d}
+\begin{algorithmic}[2]
+\State {\bf Input:} $P$, where $P \subset E^2$
+\State {\bf Output:} $L$, list of vertices in the hull
+\For{$t=1,2,\dots$}
+\State $L \gets$ \Call{Hull2D}{$P,m,H$}. where $m=H=min\{2^{2^t}, n \}$
+\If{$L \neq incomplete$}\\
+~~~~~~\Return $L$
+\EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\section*{+1 Element}
+The +1 element we have chosen to focus on is comparing the miniball or the smallest enclosing circle to the convex hull in 2D where the algorithm is output sensitive. We also want to look at the aspect ratio of a point set by taking the difference between the inscribing ball and the smallest enclosing ball and compare this value to the area of the convex hull. 
+
+Insert Bibliography
+\end{document}
