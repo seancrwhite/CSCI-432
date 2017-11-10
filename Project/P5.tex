@@ -14,6 +14,8 @@
 \begin{document}
 \maketitle
 
-For this paper we are examining the convex hull algorithm created by Timothy Chan in 1996. This algorithm that takes n points on a graph and seeks to create the smallest possible polygon that encloses all points. We will be comparing it to the miniball algorithm outlined in class as they are similar processes that solve somewhat different problems 
+For this paper we are examining the convex hull algorithm created by Timothy Chan in 1996. This algorithm takes n points on a graph and seeks to create the smallest possible polygon that encloses all points. We will derive the asymptotic upper bound of the worst case runtime of this algorithm, then compare it to the miniball algorithm covered in class as they solve similar problems. We will then look at what is known as the \textit{aspect ratio}, which is defined as the area of the washer created between the smallest enclosing ball (miniball) and the largest enscribing circle and compare the runtime to to finding the area of the polygon created by the convex hull.
+
+So far we have pseudocode for convex hull, miniball, and largest enscribing circle, as well as runtimes for each. We will not include those here for the sake of space, as this report must be under 2 pages the pseudocode would take this up on their own. Next we will write out proofs for each upper bound, find algorithms for the area of the convex hull and aspect ratio, and find some way to compare results. Next we will implement these algorithms and generate a set of points to run them on to test. 
 
 \end{document}
