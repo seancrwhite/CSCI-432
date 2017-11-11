@@ -46,6 +46,12 @@ The loop invariant is the fact that there exists a local minima $m \in A$\\
 
 \textbf{Question B.} The rand() function in the standard C library returns a uniformly random number in $[0,RANDMAX-1]$. Does rand() mod n generate a number uniformly distributed in $[0, n-1]$?\\
 
+Not in all cases can we say that it is evenly distributed. In the case where $n > RANDMAX$, we will not get even distribution from $[0, n-1]$. \newline
+This is because $rand() mod n$ will always produce a number that will equal the result of that particular instance of rand(). \newline
+Since the maximum value of rand() will never exceed $RANDMAX$, only the values from $[0, RANDMAX-1]$can possibly occur. \newline
+If $n > RANDMAX$, then what of the values from $[RANDMAX, n-1]$? They have no chance of ever occurring because under these situations $rand() mod n$ cannot produce them. \newline
+If the values from $[RANDMAX, n-1]$ have no probability of being produced, then $[0, n-1]$ can't be said to be uniformly distributed. \newline
+
 \textbf{Question C.} In this class, we assume the real-RAM model of computation for our analysis. Explain why we must define what model of computation we are using in an algorithms class, or, more generally, when talking about the complexity of an algorithm.\\
 
 We need a clearly defined model of computation because we need to be able to contextualize the algorithms we are analyzing. The complexity of an algorithm can change depending on the model you choose, and loops can have different implications on it overall.\\
